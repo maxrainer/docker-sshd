@@ -1,7 +1,9 @@
 FROM  ubuntu:16.04
 MAINTAINER Markus Rainer "markus.rainer@nts.eu"
 
+
 RUN apt-get update -y && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   openssh-server
 
 RUN apt-get clean
