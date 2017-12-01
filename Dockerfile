@@ -9,6 +9,7 @@ RUN rm /etc/apt/apt.conf.d/docker-clean
 
 RUN mkdir /var/run/sshd
 RUN mkdir /home/tunneluser
+RUN chown -R tunneluser.tunneluser /home/tunneluser
 RUN useradd -d /home/tunneluser -s /bin/bash tunneluser
 
 RUN sed -ri 's/^.*PasswordAuthentication\s+.*/PasswordAuthentication no/' /etc/ssh/sshd_config
